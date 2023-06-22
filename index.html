@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Kiểm Tra Tốc Độ Trang</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo-link">
+            <img src="https://www.gstatic.com/pagespeed/insights/ui/logo/favicon_48.png" width="24" height="24" alt="PageSpeed Insights logo" class="logo-image">
+            <div class="logo-text">PageSpeed Insights</div>
+        </a>
+    </header>
+    <main>
+        <div class="main-controls">
+            <input type="text" id="urlInput" placeholder="Enter a web page URL">
+            <button id="trackingBtn" onclick="startTracking()">Start Tracking</button>
+        </div>
+        <div class="main-result">
+            <div class="chart-container">
+                <canvas id="speedChart"></canvas>
+            </div>
+            <div id="current-result">
+                <div id="desktop-results" class="results">
+                    <h2>Desktop</h2>
+                    <div class="score-circle">
+                        <svg viewbox="0 0 36 36" class="circular-chart">
+                            <path class="circle-bg" d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                            <path class="circle" stroke-dasharray="0, 100" id="desktop-circle" d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                        </svg>
+                        <div class="score-number" id="desktop-score-number"></div>
+                    </div>
+                    <div class="row">
+                        <div id="desktop-fcp" class="half">
+                            <span>First Contentful Paint:</span>
+                            <span class="result"></span>
+                        </div>
+                        <div id="desktop-lcp" class="half">
+                            <span>Largest Contentful Paint:</span>
+                            <span class="result"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="desktop-tbt" class="half">
+                            <span>Total Blocking Time:</span>
+                            <span class="result"></span>
+                        </div>
+                        <div id="desktop-cls" class="half">
+                            <span>Cumulative Layout Shift:</span>
+                            <span class="result"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="desktop-si" class="full">
+                            <span>Speed Index:</span>
+                            <span class="result"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="mobile-results" class="results">
+                    <h2>Mobile</h2>
+                    <div class="score-circle">
+                        <svg viewbox="0 0 36 36" class="circular-chart">
+                            <path class="circle-bg" d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                            <path class="circle" stroke-dasharray="0, 100" id="mobile-circle" d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                        </svg>
+                        <div class="score-number" id="mobile-score-number"></div>
+                    </div>
+                    <div class="row">
+                        <div id="mobile-fcp" class="half">
+                            <span>First Contentful Paint:</span>
+                            <span class="result"></span>
+                        </div>
+                        <div id="mobile-lcp" class="half">
+                            <span>Largest Contentful Paint:</span>
+                            <span class="result"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="mobile-tbt" class="half">
+                            <span>Total Blocking Time:</span>
+                            <span class="result"></span>
+                        </div>
+                        <div id="mobile-cls" class="half">
+                            <span>Cumulative Layout Shift:</span>
+                            <span class="result"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="mobile-si" class="full">
+                            <span>Speed Index:</span>
+                            <span class="result"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    padding-bottom: 100px;
+}
+
+.header {
+    width: 100%;
+    height: 56px;
+    padding: 14px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+    border-bottom: 1px solid #dadce0;
+    box-sizing: border-box;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+
+.logo-image {
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 22px;
+    line-height: 24px;
+}
+
+main{
+    margin-top: 80px;
+}
+
+.main-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#urlInput {
+    height: 44px;
+    width: 38%;
+    padding: 0 16px;
+    margin-right: 10px;
+}
+
+#trackingBtn {
+    background-color: rgb(65, 65, 250);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+}
+
+.main-result {
+    width: 90%;
+    height: 70vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+}
+
+.chart-container {
+    width: 60%;
+    padding: 20px;
+}
+
+#current-result {
+    width: 25%;
+    padding: 10px;
+}
+
+#desktop-results,
+#mobile-results {
+    display: none;
+}
+
+.results {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.circular-chart {
+    display: block;
+    margin: 10px auto;
+    width: 90px;
+}
+
+.score-circle {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: -10px;
+    width: fit-content;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.circle {
+    stroke: #4CC790;
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+}
+
+.circle-bg {
+    fill: none;
+    stroke-width: 3.8;
+}
+
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}
+
+.score-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.half {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.half:nth-child(1) {
+    margin-right: 30px;
+}
+
+.full {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
