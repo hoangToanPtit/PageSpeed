@@ -32,6 +32,9 @@ function startTracking() {
         document.getElementById('trackingBtn').innerHTML = "End Tracking";
 
         if (!speedChart) {
+            var intervalControls = document.getElementsByClassName('interval-controls')[0];
+            intervalControls.style.display = "block";
+            document.getElementById('intervalInput').addEventListener('change', updateInterval);
             speedChart = new Chart(
                 document.getElementById('speedChart'),
                 {
@@ -81,10 +84,10 @@ function startTracking() {
         }
 
         checkSpeed(url);
-
+        var interval = document.getElementById('intervalInput').value || 1;
         trackingInterval = setInterval(function() {
             checkSpeed(url);
-        }, 60000); 
+        }, interval*60000); 
     } else {
         tracking = false;
         document.getElementById('trackingBtn').innerHTML = "Start Tracking";
@@ -198,4 +201,15 @@ function checkSpeed(url) {
     .catch(error => {
         console.error('Lỗi:', error);
     });
+}
+
+function updateInterval() {
+    if (tracking) {
+        clearInterval(trackingInterval);
+        var url = document.getElementById('urlInput').value;
+        var interval = document.getElementById('intervalInput').value || 1;
+        trackingInterval = setInterval(function() {
+            checkSpeed(url);
+        }, interval*60000); 
+    }
 }
