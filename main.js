@@ -164,11 +164,22 @@ function checkSpeed(url) {
 
         desktopScoreNumber.textContent = desktopScore;
         
+        // desktop
+        document.getElementById('desktop-fcp').getElementsByClassName('result')[0].style.color = getFcpColor(desktopFcp);
         document.getElementById('desktop-fcp').getElementsByClassName('result')[0].textContent = desktopFcp;
+
+        document.getElementById('desktop-lcp').getElementsByClassName('result')[0].style.color = getLcpColor(desktopLcp);
         document.getElementById('desktop-lcp').getElementsByClassName('result')[0].textContent = desktopLcp;
+
+        document.getElementById('desktop-tbt').getElementsByClassName('result')[0].style.color = getTbtColor(desktopTbt);
         document.getElementById('desktop-tbt').getElementsByClassName('result')[0].textContent = desktopTbt;
+
+        document.getElementById('desktop-cls').getElementsByClassName('result')[0].style.color = getClsColor(desktopCls);
         document.getElementById('desktop-cls').getElementsByClassName('result')[0].textContent = desktopCls;
+
+        document.getElementById('desktop-si').getElementsByClassName('result')[0].style.color = getSIColor(desktopSi);
         document.getElementById('desktop-si').getElementsByClassName('result')[0].textContent = desktopSi;
+
         
 
         // mobile
@@ -190,10 +201,19 @@ function checkSpeed(url) {
         mobileScoreNumber.parentElement.style.backgroundColor = `${mobileColor}33`;
         mobileScoreNumber.textContent = mobileScore;
 
+        document.getElementById('mobile-fcp').getElementsByClassName('result')[0].style.color = getFcpColor(mobileFcp);
         document.getElementById('mobile-fcp').getElementsByClassName('result')[0].textContent = mobileFcp;
+
+        document.getElementById('mobile-lcp').getElementsByClassName('result')[0].style.color = getLcpColor(mobileLcp);
         document.getElementById('mobile-lcp').getElementsByClassName('result')[0].textContent = mobileLcp;
+
+        document.getElementById('mobile-tbt').getElementsByClassName('result')[0].style.color = getTbtColor(mobileTbt);
         document.getElementById('mobile-tbt').getElementsByClassName('result')[0].textContent = mobileTbt;
+
+        document.getElementById('mobile-cls').getElementsByClassName('result')[0].style.color = getClsColor(mobileCls);
         document.getElementById('mobile-cls').getElementsByClassName('result')[0].textContent = mobileCls;
+
+        document.getElementById('mobile-si').getElementsByClassName('result')[0].style.color = getSIColor(mobileSi);
         document.getElementById('mobile-si').getElementsByClassName('result')[0].textContent = mobileSi;
            
 
@@ -211,5 +231,60 @@ function updateInterval() {
         trackingInterval = setInterval(function() {
             checkSpeed(url);
         }, interval*60000); 
+    }
+}
+
+function getFcpColor(fcp) {
+    var value = parseFloat(fcp);
+    if (value <= 1.8) {
+        return "#008800";
+    } else if (value <= 3) {
+        return "#FFAA33";
+    } else {
+        return "#FF3333";
+    }
+}
+
+function getLcpColor(lcp) {
+    var value = parseFloat(lcp);
+    if (value <= 2.5) {
+        return "#008800";
+    } else if (value <= 4) {
+        return "#FFAA33";
+    } else {
+        return "#FF3333";
+    }
+}
+
+function getTbtColor(tbt) {
+    var value = parseFloat(tbt);
+    if (value <= 200) {
+        return "#008800";
+    } else if (value <= 600) {
+        return "#FFAA33";
+    } else {
+        return "#FF3333";
+    }
+}
+
+function getClsColor(cls) {
+    var value = parseFloat(cls);
+    if (value <= 0.1) {
+        return "#008800";
+    } else if (value <= 0.25) {
+        return "#FFAA33";
+    } else {
+        return "#FF3333";
+    }
+}
+
+function getSIColor(si) {
+    var value = parseFloat(si);
+    if (value <= 3.4) {
+        return "#008800";
+    } else if (value <= 5.8) {
+        return "#FFAA33";
+    } else {
+        return "#FF3333";
     }
 }
