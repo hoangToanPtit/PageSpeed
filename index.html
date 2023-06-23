@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Kiểm Tra Tốc Độ Trang</title>
+    <title>PageSpeed</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
@@ -27,7 +27,10 @@
             </div>
             <div id="current-result">
                 <div id="desktop-results" class="results">
-                    <h2>Desktop</h2>
+                    <div class="results-header">
+                        <img class="results-header-icon" src="img/icon/laptop.svg" alt="desktop">
+                        <p class="results-header-title">Desktop</p>
+                    </div>
                     <div class="score-circle">
                         <svg viewbox="0 0 36 36" class="circular-chart">
                             <path class="circle-bg" d="M18 2.0845
@@ -60,14 +63,17 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div id="desktop-si" class="full">
+                        <div id="desktop-si" class="half">
                             <span>Speed Index:</span>
                             <span class="result"></span>
                         </div>
                     </div>
                 </div>
                 <div id="mobile-results" class="results">
-                    <h2>Mobile</h2>
+                    <div class="results-header">
+                        <img class="results-header-icon" src="img/icon/smartphone.svg" alt="mobile">
+                        <p class="results-header-title">Mobile</p>
+                    </div>
                     <div class="score-circle">
                         <svg viewbox="0 0 36 36" class="circular-chart">
                             <path class="circle-bg" d="M18 2.0845
@@ -100,7 +106,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div id="mobile-si" class="full">
+                        <div id="mobile-si" class="half">
                             <span>Speed Index:</span>
                             <span class="result"></span>
                         </div>

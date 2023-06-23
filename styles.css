@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     padding-bottom: 100px;
+    color: #212121;
 }
 
 .header {
@@ -52,7 +53,7 @@ main{
 }
 
 #trackingBtn {
-    background-color: rgb(65, 65, 250);
+    background-color: rgb(0,102,255);
     color: white;
     padding: 15px;
     border: none;
@@ -85,7 +86,7 @@ main{
 
 .results {
     width: 100%;
-    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .circular-chart {
@@ -99,7 +100,7 @@ main{
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    margin-top: -10px;
+    margin-bottom: 20px;
     width: fit-content;
     box-sizing: border-box;
     border-radius: 50%;
@@ -129,14 +130,15 @@ main{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     z-index: 100;
 }
 
 .row {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: start;
     margin-bottom: 10px;
 }
 
@@ -144,8 +146,13 @@ main{
     display: flex;
     width: 50%;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
+
+.half span:nth-child(2) {
+    display: block;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 20px;
 }
 
 .half:nth-child(1) {
@@ -158,4 +165,24 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.full span:nth-child(2) {
+    font-size: 20px;
+}
+
+.results-header {
+    display: flex;
+    margin-bottom: -25px;
+}
+
+.results-header-icon {
+    width: 25px;
+    display: inline-block;
+}
+
+.results-header-title {
+    font-size: 19px;
+    font-weight: 540;
+    margin-left: 8px;
 }

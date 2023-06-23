@@ -7,19 +7,19 @@ var chartData = {
         label: 'Desktop',
         data: [],
         fill: false,
-        borderColor: 'rgb(11, 163, 87)',
-        backgroundColor: 'rgb(11, 163, 87)',
+        borderColor: 'rgb(0,102,255)',
+        backgroundColor: 'rgb(0,102,255)',
         tension: 0.1,
-        pointRadius: 5
+        pointRadius: 4
     },
     {
         label: 'Mobile',
         data: [],
         fill: false,
-        borderColor: 'rgb(232, 37, 37)',
-        backgroundColor: 'rgb(232, 37, 37)',
+        borderColor: 'rgb(204,102,255)',
+        backgroundColor: 'rgb(204,102,255)',
         tension: 0.1,
-        pointRadius: 5
+        pointRadius: 4
     }]
 };
 
@@ -149,11 +149,11 @@ function checkSpeed(url) {
 
         var desktopColor;
         if (desktopScore < 50) {
-            desktopColor = "#ff0000";
+            desktopColor = "#FF3333";
         } else if (desktopScore < 90) {
-            desktopColor = "#ffc107";
+            desktopColor = "#FFAA33";
         } else {
-            desktopColor = "#4caf50";
+            desktopColor = "#008800";
         }
         desktopCircle.style.stroke = desktopColor;
         desktopScoreNumber.style.color = desktopColor;
@@ -175,11 +175,11 @@ function checkSpeed(url) {
 
         var mobileColor;
         if (mobileScore < 50) {
-            mobileColor = "#ff0000"; 
+            mobileColor = "#FF3333"; 
         } else if (mobileScore < 90) {
-            mobileColor = "#ffc107"; 
+            mobileColor = "#FFAA33"; 
         } else {
-            mobileColor = "#4caf50"; 
+            mobileColor = "#008800"; 
         }
 
         mobileCircle.style.stroke = mobileColor;
