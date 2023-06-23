@@ -160,11 +160,10 @@ function checkSpeed(url) {
         }
         desktopCircle.style.stroke = desktopColor;
         desktopScoreNumber.style.color = desktopColor;
-        desktopScoreNumber.parentElement.style.backgroundColor = `${desktopColor}33`;
+        desktopScoreNumber.parentElement.style.backgroundColor = `${desktopColor}22`;
 
         desktopScoreNumber.textContent = desktopScore;
         
-        // desktop
         document.getElementById('desktop-fcp').getElementsByClassName('result')[0].style.color = getFcpColor(desktopFcp);
         document.getElementById('desktop-fcp').getElementsByClassName('result')[0].textContent = desktopFcp;
 
@@ -198,7 +197,7 @@ function checkSpeed(url) {
 
         mobileCircle.style.stroke = mobileColor;
         mobileScoreNumber.style.color = mobileColor;
-        mobileScoreNumber.parentElement.style.backgroundColor = `${mobileColor}33`;
+        mobileScoreNumber.parentElement.style.backgroundColor = `${mobileColor}22`;
         mobileScoreNumber.textContent = mobileScore;
 
         document.getElementById('mobile-fcp').getElementsByClassName('result')[0].style.color = getFcpColor(mobileFcp);
