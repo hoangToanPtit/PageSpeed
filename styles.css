@@ -87,7 +87,7 @@ main{
     padding: 2px 5px;
 }
 
-#current-result {
+#best-result {
     width: 25%;
     padding: 10px;
 }
@@ -201,4 +201,10 @@ main{
     font-size: 19px;
     font-weight: 540;
     margin-left: 8px;
+}
+
+.best-result-title {
+    display: none;
+    font-size: 26px;
+    font-weight: 540;
 }
