@@ -66,7 +66,7 @@ main{
     margin: auto;
     display: flex;
     justify-content: space-around;
-    font-size: 14px;
+    font-size: 0.85rem;
 }
 
 .chart-container {
@@ -104,8 +104,7 @@ main{
 
 .circular-chart {
     display: block;
-    margin: 10px auto;
-    width: 90px;
+    width: 75px;
 }
 
 .score-circle {
@@ -123,7 +122,7 @@ main{
 .circle {
     stroke: #4CC790;
     fill: none;
-    stroke-width: 2.5;
+    stroke-width: 2;
     stroke-linecap: round;
     animation: progress 1s ease-out forwards;
 }
@@ -144,8 +143,8 @@ main{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 550;
     z-index: 100;
 }
 
@@ -166,7 +165,7 @@ main{
     display: block;
     margin-top: 8px;
     text-align: center;
-    font-size: 24px;
+    font-size: 1.2rem;
     font-weight: 500;
 }
 
@@ -191,6 +190,7 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    line-height: 0;
 }
 
 .results-header-type {
@@ -201,24 +201,24 @@ main{
 }
 
 .results-header-icon {
-    width: 25px;
+    width: 22px;
     display: inline-block;
 }
 
 .results-header-title {
-    font-size: 19px;
+    font-size: 1.2rem;
     font-weight: 540;
     margin-left: 8px;
 }
 
 .results-header-time {
     width: 50%;
-    font-size: 14px;
+    font-size: 0.85rem;
 }
 
 .best-result-title {
     display: none;
-    font-size: 26px;
+    font-size: 1.6rem;
     font-weight: 540;
 }
 
