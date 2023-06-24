@@ -104,27 +104,6 @@ function checkSpeed(url) {
     .then(responses => Promise.all(responses.map(response => response.json())))
     .then(([desktopData, mobileData]) => {
         var now = new Date().toISOString();
-        chartData.labels.push(now);
-        chartData.datasets[0].data.push({
-            x: now,
-            y: desktopData.lighthouseResult.categories.performance.score * 100,
-            fcP: desktopData.lighthouseResult.audits['first-contentful-paint'].displayValue,
-            lcP: desktopData.lighthouseResult.audits['largest-contentful-paint'].displayValue,
-            tbT: desktopData.lighthouseResult.audits['total-blocking-time'].displayValue,
-            cLS: desktopData.lighthouseResult.audits['cumulative-layout-shift'].displayValue,
-            sI: desktopData.lighthouseResult.audits['speed-index'].displayValue
-        });
-        chartData.datasets[1].data.push({
-            x: now,
-            y: mobileData.lighthouseResult.categories.performance.score * 100,
-            fcP: mobileData.lighthouseResult.audits['first-contentful-paint'].displayValue,
-            lcP: mobileData.lighthouseResult.audits['largest-contentful-paint'].displayValue,
-            tbT: mobileData.lighthouseResult.audits['total-blocking-time'].displayValue,
-            cLS: mobileData.lighthouseResult.audits['cumulative-layout-shift'].displayValue,
-            sI: mobileData.lighthouseResult.audits['speed-index'].displayValue
-        });
-
-        speedChart.update();
 
         var desktopScore = Math.round(desktopData.lighthouseResult.categories.performance.score*100);
         var desktopFcp = desktopData.lighthouseResult.audits['first-contentful-paint'].displayValue;
@@ -139,7 +118,31 @@ function checkSpeed(url) {
         var mobileTbt = mobileData.lighthouseResult.audits['total-blocking-time'].displayValue;
         var mobileCls = mobileData.lighthouseResult.audits['cumulative-layout-shift'].displayValue;
         var mobileSi = mobileData.lighthouseResult.audits['speed-index'].displayValue;
+
+        //update chart
+        chartData.labels.push(now);
+        chartData.datasets[0].data.push({
+            x: now,
+            y: desktopScore,
+            fcP: desktopFcp,
+            lcP: desktopLcp,
+            tbT: desktopTbt,
+            cLS: desktopCls,
+            sI: desktopSi
+        });
+        chartData.datasets[1].data.push({
+            x: now,
+            y: mobileScore,
+            fcP: mobileFcp,
+            lcP: mobileLcp,
+            tbT: mobileTbt,
+            cLS: mobileCls,
+            sI: mobileSi
+        });
+
+        speedChart.update();
         
+        //update best result
         var desktopResult = document.getElementById('desktop-results');
         desktopResult.style.display = "block";
         var mobileResult = document.getElementById('mobile-results');
