@@ -189,7 +189,15 @@ main{
 
 .results-header {
     display: flex;
-    margin-bottom: -25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.results-header-type {
+    width: 50%;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .results-header-icon {
@@ -201,6 +209,11 @@ main{
     font-size: 19px;
     font-weight: 540;
     margin-left: 8px;
+}
+
+.results-header-time {
+    width: 50%;
+    font-size: 14px;
 }
 
 .best-result-title {

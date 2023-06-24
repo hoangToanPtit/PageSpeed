@@ -105,7 +105,9 @@ function checkSpeed(url) {
     ])
     .then(responses => Promise.all(responses.map(response => response.json())))
     .then(([desktopData, mobileData]) => {
-        var now = new Date().toISOString();
+        var nowTime = new Date();
+        var now = nowTime.toISOString();
+        var dateTime = nowTime.toLocaleString();
 
         var desktopScore = Math.round(desktopData.lighthouseResult.categories.performance.score*100);
         var desktopFcp = desktopData.lighthouseResult.audits['first-contentful-paint'].displayValue;
@@ -154,6 +156,9 @@ function checkSpeed(url) {
 
         // desktop
         if (maxDesktopScore <= desktopScore) {
+            var desktopTime = document.getElementById("best-result-time-desktop");
+            desktopTime.textContent = dateTime;
+
             maxDesktopScore = desktopScore;
             var desktopCircle = document.getElementById('desktop-circle');
             var desktopScoreNumber = document.getElementById('desktop-score-number');
@@ -185,6 +190,9 @@ function checkSpeed(url) {
 
         // mobile
         if (maxMobileScore <= mobileScore) {
+            var mobileTime = document.getElementById("best-result-time-mobile");
+            mobileTime.textContent = dateTime;
+
             maxMobileScore = mobileScore;
             var mobileCircle = document.getElementById('mobile-circle');
             var mobileScoreNumber = document.getElementById('mobile-score-number');
